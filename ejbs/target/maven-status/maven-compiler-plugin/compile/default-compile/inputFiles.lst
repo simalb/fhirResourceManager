@@ -1,1 +1,7 @@
-/home/esimalb/java-test-simona-albanesi/fhirResourceManager/ejbs/src/main/java/java/test/frm/fhirResourceManagerHandler.java
+/home/esimalb/fhirResourceManager/ejbs/src/main/java/java/test/frm/utils/HttpOperationHandler.java
+/home/esimalb/fhirResourceManager/ejbs/src/main/java/java/test/frm/fhirResourceManagerHandler.java
+/home/esimalb/fhirResourceManager/ejbs/src/main/java/java/test/frm/utils/Constants.java
+/home/esimalb/fhirResourceManager/ejbs/src/main/java/java/test/frm/utils/ConnectionInfo.java
+/home/esimalb/fhirResourceManager/ejbs/src/main/java/java/test/frm/exceptions/HttpURLConnectionFailException.java
+/home/esimalb/fhirResourceManager/ejbs/src/main/java/java/test/frm/utils/ResultHandler.java
+/home/esimalb/fhirResourceManager/ejbs/src/main/java/java/test/frm/utils/HttpConnectionHandler.java
