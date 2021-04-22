@@ -1,14 +1,12 @@
-package java.test.frm.utils.prova;
+package frm.bean.utils.utils;
+
+import frm.bean.utils.exceptions.HttpURLConnectionFailException;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-
-
-import java.test.frm.exceptions.HttpURLConnectionFailException;
-
 
 public class HttpOperationHandler {
 

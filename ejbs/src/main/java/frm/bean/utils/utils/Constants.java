@@ -1,4 +1,4 @@
-package java.test.frm.utils.prova;
+package frm.bean.utils.utils;
 
 public class Constants {
     public static final String JSON_FILE_PATH_PROP = "jsonFilePath";

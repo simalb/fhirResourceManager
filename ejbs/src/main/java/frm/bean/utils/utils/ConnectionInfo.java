@@ -1,4 +1,4 @@
-package java.test.frm.utils.prova;
+package frm.bean.utils.utils;
 
 public class ConnectionInfo {
     private String user = Constants.USER_NAME;

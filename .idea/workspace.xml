@@ -2,32 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6ae298f-4f0a-4060-bbe9-12237b45058e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_all_1_10_8.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="$PROJECT_DIR$/ear/ear.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ear/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/ear/target/maven-archiver/pom.properties" />
-      <change beforePath="$PROJECT_DIR$/ejbs/ejbs.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ejbs/pom.xml" afterPath="$PROJECT_DIR$/ejbs/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/fhirResourceManagerHandler.java" afterPath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/FhirResourceManagerHandler.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/FhirResourceManagerHandler.java" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/FhirResourceManagerHandler.java" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/exceptions/HttpURLConnectionFailException.java" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/exceptions/HttpURLConnectionFailException.java" />
       <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/ConnectionInfo.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/Constants.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/HttpConnectionHandler.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/HttpOperationHandler.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/ResultHandler.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ejbs/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/ejbs/target/maven-archiver/pom.properties" />
-      <change beforePath="$PROJECT_DIR$/ejbs/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/ejbs/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/ejbs/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/ejbs/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/primary-source/primary-source.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/primary-source/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/primary-source/target/maven-archiver/pom.properties" />
-      <change beforePath="$PROJECT_DIR$/project.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projects/logging/logging.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/projects/logging/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/projects/logging/target/maven-archiver/pom.properties" />
-      <change beforePath="$PROJECT_DIR$/projects/projects.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/servlets/servlet/servlet.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/servlets/servlet/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/servlets/servlet/target/maven-archiver/pom.properties" />
-      <change beforePath="$PROJECT_DIR$/servlets/servlets.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/ConnectionInfo.java" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/ConnectionInfo.java" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/Constants.java" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/Constants.java" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/HttpConnectionHandler.java" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/HttpConnectionHandler.java" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/HttpOperationHandler.java" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/HttpOperationHandler.java" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/PropertiesReader.java" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/PropertiesReader.java" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/ResultHandler.java" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/ResultHandler.java" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/test/java/HttpOperationHandlerTest.java" afterPath="$PROJECT_DIR$/ejbs/src/test/java/frm/bean/utils/HttpOperationHandlerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/ear/target/" />
     <ignored path="$PROJECT_DIR$/projects/target/" />
@@ -57,7 +46,7 @@
         </entry>
       </file>
       <file leaf-file-name="FhirResourceManagerHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/FhirResourceManagerHandler.java">
+        <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/FhirResourceManagerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
               <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="25" selection-end-column="17" />
@@ -67,7 +56,7 @@
         </entry>
       </file>
       <file leaf-file-name="HttpConnectionHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/HttpConnectionHandler.java">
+        <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/HttpConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
@@ -76,28 +65,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpOperationHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/HttpOperationHandler.java">
+      <file leaf-file-name="HttpOperationHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/HttpOperationHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="33" />
+            <state relative-caret-position="-55">
+              <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpOperationHandlerTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ejbs/src/test/java/HttpOperationHandlerTest.java">
+      <file leaf-file-name="HttpOperationHandlerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ejbs/src/test/java/frm/bean/utils/HttpOperationHandlerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="187">
+              <caret line="87" column="35" lean-forward="true" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="PropertiesReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/PropertiesReader.java">
+        <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/PropertiesReader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
               <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
@@ -138,6 +127,8 @@
         <option value="$PROJECT_DIR$/ejbs/src/test/java/java/test/frm/utils/HttpOperationHandlerTest.java" />
         <option value="$PROJECT_DIR$/ejbs/src/test/java/java/test/frm/utils/prova/HttpOperationHandlerTest.java" />
         <option value="$PROJECT_DIR$/ejbs/src/test/java/HttpOperationHandlerTest.java" />
+        <option value="$PROJECT_DIR$/ejbs/src/test/java/frm/bean/HttpOperationHandlerTest.java" />
+        <option value="$PROJECT_DIR$/ejbs/src/test/java/frm/bean/utils/HttpOperationHandlerTest.java" />
       </list>
     </option>
   </component>
@@ -209,7 +200,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="frm" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
@@ -218,8 +209,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="frm" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
@@ -235,6 +226,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fhirResourceManager" type="462c0819:PsiDirectoryNode" />
+              <item name="ejbs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -255,6 +255,9 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/ejbs/src/test/java" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="frm.bean" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils" />
       <recent name="$PROJECT_DIR$/ejbs/src/test/java/test/frm/utils" />
@@ -326,12 +329,17 @@
       <patterns />
     </configuration>
     <configuration name="HttpOperationHandlerTest (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="frm.bean.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <module name="ejbs" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HttpOperationHandlerTest" />
+      <option name="PACKAGE_NAME" value="frm.bean.utils" />
+      <option name="MAIN_CLASS_NAME" value="frm.bean.utils.HttpOperationHandlerTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -357,6 +365,26 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="java.test.frm.utils" />
       <option name="MAIN_CLASS_NAME" value="java.test.frm.utils.HttpOperationHandlerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="HttpOperationHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="ejbs" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="frm.bean" />
+      <option name="MAIN_CLASS_NAME" value="frm.bean.HttpOperationHandlerTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -436,10 +464,11 @@
       <item index="2" class="java.lang.String" itemvalue="JUnit.HttpOperationHandlerTest (2)" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="JUnit.HttpOperationHandlerTest (2)" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.HttpOperationHandlerTest (1)" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.HttpOperationHandlerTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.HttpOperationHandlerTest (2)" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.HttpOperationHandlerTest (1)" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.HttpOperationHandlerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -472,9 +501,16 @@
     <history-entry file="HttpOperationHandlerTest_(2) - 2021.04.22 at 20h 56m 25s.xml">
       <configuration name="HttpOperationHandlerTest (2)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="HttpOperationHandlerTest_(2) - 2021.04.22 at 21h 01m 17s.xml">
+      <configuration name="HttpOperationHandlerTest (2)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HttpOperationHandlerTest_(2) - 2021.04.22 at 21h 06m 31s.xml">
+      <configuration name="HttpOperationHandlerTest (2)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="210" y="74" width="1285" height="825" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -491,7 +527,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3539823" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45575222" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30378726" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -548,7 +584,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/PropertiesReader.java">
+    <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/PropertiesReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
@@ -556,15 +592,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/HttpOperationHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/utils/prova/HttpConnectionHandler.java">
+    <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/HttpConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
@@ -572,7 +600,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/java/test/frm/FhirResourceManagerHandler.java">
+    <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/FhirResourceManagerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="25" selection-end-column="17" />
@@ -588,10 +616,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejbs/src/test/java/HttpOperationHandlerTest.java">
+    <entry file="file://$PROJECT_DIR$/ejbs/src/test/java/frm/bean/utils/HttpOperationHandlerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="187">
+          <caret line="87" column="35" lean-forward="true" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/HttpOperationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-55">
+          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
           <folding />
         </state>
       </provider>

@@ -1,11 +1,13 @@
+package frm.bean.utils;
+
+import frm.bean.utils.exceptions.HttpURLConnectionFailException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.test.frm.exceptions.HttpURLConnectionFailException;
-import java.test.frm.utils.prova.HttpOperationHandler;
+import frm.bean.utils.utils.HttpOperationHandler;
 
-import static java.test.frm.FhirResourceManagerHandler.TEST_URI;
+import static frm.bean.utils.FhirResourceManagerHandler.TEST_URI;
 
 /**
  * The type Json handler tester.
@@ -22,7 +24,7 @@ public class HttpOperationHandlerTest {
     /**
      * The Get interface list response.
      */
-    String getInterfaceListResponse =
+    /*String getInterfaceListResponse =
             "{" +
             "\n   \"output\" : {" +
             "\n     \"network-ref\" : \"mini-link-topo\"," +
@@ -34,19 +36,19 @@ public class HttpOperationHandlerTest {
             "\n       ]" +
             "\n     }" +
             "\n   }" +
-            "\n}";
+            "\n}";*/
 
     /**
      * The Set interface monitored rate response.
      */
-    String setInterfaceMonitoredRateResponse =
+    /*String setInterfaceMonitoredRateResponse =
             "{" +
             "\n   \"output\" : {" +
             "\n     \"time-interval\" : \"10\"," +
             "\n     \"tx-monitored-rate\" : \"100000\"," +
             "\n     \"result-ok\" : \"true\"" +
             "\n   }" +
-            "\n}";
+            "\n}";*/
 
 
     //final static private String POSTJSON = "{ \"output\" : {} }";
@@ -80,7 +82,6 @@ public class HttpOperationHandlerTest {
     @Test
     public void testPost() {
         System.out.println("*** start testParseGetInterfaceList ***");
-        System.out.println(getInterfaceListResponse);
 
         System.out.println("*** Starting fhirResourceManager execution.");
         try {

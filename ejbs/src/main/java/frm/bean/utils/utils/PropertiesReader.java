@@ -10,7 +10,7 @@
  *******************************************************************************
  *----------------------------------------------------------------------------*/
 
-package java.test.frm.utils.prova;
+package frm.bean.utils.utils;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package java.test.frm.exceptions;
+package frm.bean.utils.exceptions;
 
 
 public class HttpURLConnectionFailException extends Exception {

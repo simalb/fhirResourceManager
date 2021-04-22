@@ -1,12 +1,12 @@
-package java.test.frm;
+package frm.bean.utils;
+
+import frm.bean.utils.exceptions.HttpURLConnectionFailException;
+import frm.bean.utils.utils.HttpOperationHandler;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-
-import java.test.frm.exceptions.HttpURLConnectionFailException;
-import java.test.frm.utils.prova.HttpOperationHandler;
 
 @Startup
 @Singleton

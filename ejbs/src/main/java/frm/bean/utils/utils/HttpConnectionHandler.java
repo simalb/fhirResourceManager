@@ -1,4 +1,4 @@
-package java.test.frm.utils.prova;
+package frm.bean.utils.utils;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
