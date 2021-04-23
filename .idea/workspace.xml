@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ae298f-4f0a-4060-bbe9-12237b45058e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/FhirResourceManagerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/FhirResourceManagerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Identifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Identifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/JsonManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/utils/JsonManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Meta.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Meta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Name.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Telecom.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Telecom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Text.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ear/ear.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ear/ear.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/ejbs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/ejbs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ejbs/src/test/java/frm/bean/utils/http/connection/HttpOperationHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/test/java/frm/bean/utils/http/connection/HttpOperationHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +199,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_directory_selection" value="$PROJECT_DIR$/ejbs/src/main/java/frm/bean" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -210,8 +207,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/entity" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/entity" />
       <recent name="$PROJECT_DIR$/servlets" />
       <recent name="$PROJECT_DIR$/projects" />
       <recent name="$PROJECT_DIR$/primary-source" />
@@ -272,6 +269,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="frm.bean.utils" />
       <option name="MAIN_CLASS_NAME" value="frm.bean.utils.HttpOperationHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpOperationHandlerTest (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ejbs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="frm.bean.utils.http.connection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="frm.bean.utils.http.connection" />
+      <option name="MAIN_CLASS_NAME" value="frm.bean.utils.http.connection.HttpOperationHandlerTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -364,10 +377,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.HttpOperationHandlerTest (3)" />
+        <item itemvalue="JUnit.HttpOperationHandlerTest" />
         <item itemvalue="JUnit.HttpOperationHandlerTest (2)" />
         <item itemvalue="JUnit.HttpOperationHandlerTest (2)" />
         <item itemvalue="JUnit.HttpOperationHandlerTest (1)" />
-        <item itemvalue="JUnit.HttpOperationHandlerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -449,8 +462,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ejbs/src/test/java/frm/bean/utils/http/connection/HttpOperationHandlerTest.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="1" />
+          <line>94</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,6 +1,8 @@
 package frm.bean.utils.http.connection;
 
 
+import frm.bean.persistence.entity.PatientEntity;
+import frm.bean.persistence.utils.ConverterUtility;
 import frm.bean.utils.http.connection.exception.HttpURLConnectionFailException;
 import frm.bean.utils.json.objects.Patient;
 import frm.bean.utils.json.utils.JsonManager;
@@ -88,7 +90,10 @@ public class HttpOperationHandlerTest {
             ResultHandler resultHandler = httpOperationHandler.get(TEST_URI);
 
             Patient patient = JsonManager.getPatientFromJson(resultHandler.getResultMessage());
+            PatientEntity patientEntity = ConverterUtility.getCompletePatientEntity(patient, TEST_URI);
+
             System.out.println("*** Ending testGet");
+
         } catch (HttpURLConnectionFailException e) {
             e.printStackTrace();
         }
