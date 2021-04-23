@@ -85,7 +85,7 @@ public class HttpOperationHandlerTest {
 
         System.out.println("*** Starting fhirResourceManager execution.");
         try {
-            httpOperationHandler.post(TEST_URI, null);
+            httpOperationHandler.get(TEST_URI);
         } catch (HttpURLConnectionFailException e) {
             e.printStackTrace();
         }
