@@ -1,7 +1,12 @@
-package frm.bean.utils;
+package frm.bean;
 
-import frm.bean.utils.exceptions.HttpURLConnectionFailException;
-import frm.bean.utils.utils.HttpOperationHandler;
+import frm.bean.utils.http.connection.HttpOperationHandler;
+import frm.bean.utils.http.connection.JsonManager;
+
+import frm.bean.utils.http.connection.Patient;
+import frm.bean.utils.http.connection.ResultHandler;
+import frm.bean.utils.http.connection.exception.HttpURLConnectionFailException;
+
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -20,7 +25,9 @@ public class FhirResourceManagerHandler {
         public void init() {
                 System.out.println("*** Starting fhirResourceManager execution.");
                 try {
-                        httpOperationHandler.post(TEST_URI, null);
+                        ResultHandler resultHandler = httpOperationHandler.get(TEST_URI);
+
+                        Patient patient = JsonManager.getPatientFromJson(resultHandler.getResultMessage());
                 } catch (HttpURLConnectionFailException e) {
                         e.printStackTrace();
                 }

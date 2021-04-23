@@ -1,13 +1,13 @@
-package frm.bean.utils;
+package frm.bean.utils.http.connection;
 
-import frm.bean.utils.exceptions.HttpURLConnectionFailException;
+
+import frm.bean.utils.http.connection.exception.HttpURLConnectionFailException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import frm.bean.utils.utils.HttpOperationHandler;
+import static frm.bean.FhirResourceManagerHandler.TEST_URI;
 
-import static frm.bean.utils.FhirResourceManagerHandler.TEST_URI;
 
 /**
  * The type Json handler tester.
@@ -80,12 +80,13 @@ public class HttpOperationHandlerTest {
 
 
     @Test
-    public void testPost() {
-        System.out.println("*** start testParseGetInterfaceList ***");
-
-        System.out.println("*** Starting fhirResourceManager execution.");
+    public void testGet() {
+        System.out.println("*** Starting testGet");
         try {
-            httpOperationHandler.get(TEST_URI);
+            ResultHandler resultHandler = httpOperationHandler.get(TEST_URI);
+
+            Patient patient = JsonManager.getPatientFromJson(resultHandler.getResultMessage());
+            System.out.println("*** Ending testGet");
         } catch (HttpURLConnectionFailException e) {
             e.printStackTrace();
         }

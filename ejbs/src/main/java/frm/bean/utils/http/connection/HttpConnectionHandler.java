@@ -1,4 +1,4 @@
-package frm.bean.utils.utils;
+package frm.bean.utils.http.connection;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;

@@ -1,6 +1,7 @@
-package frm.bean.utils.utils;
+package frm.bean.utils.http.connection;
 
-import frm.bean.utils.exceptions.HttpURLConnectionFailException;
+
+import frm.bean.utils.http.connection.exception.HttpURLConnectionFailException;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -43,15 +44,15 @@ public class HttpOperationHandler {
             resultHandler.setCode(code);
 
             if(code == HttpURLConnection.HTTP_OK || code == HttpURLConnection.HTTP_CREATED){
-                System.out.println("HttpOperationHandler doOperation respons code OK " + code + " " + httpCommand + " " + uri);
+                System.out.println("HttpOperationHandler doOperation response code OK " + code + " " + httpCommand + " " + uri);
             }
             else {
                 if (code == HttpURLConnection.HTTP_NOT_FOUND) {
-                    System.out.println("HttpOperationHandler doOperation respons code not found " + code + " " + httpCommand + " " + uri);
+                    System.out.println("HttpOperationHandler doOperation response code not found " + code + " " + httpCommand + " " + uri);
                     resultHandler.setResultMessage("Not found");
                 }
                 else {
-                    System.out.println("HttpOperationHandler doOperation respons code not OK " + code + " " + httpCommand + " " + uri);
+                    System.out.println("HttpOperationHandler doOperation response code not OK " + code + " " + httpCommand + " " + uri);
                     resultHandler.setResultMessage("Not ok");
                     throw new HttpURLConnectionFailException("HTTP Status-Code" + conn.getResponseMessage());
                 }

@@ -1,4 +1,4 @@
-package frm.bean.utils.utils;
+package frm.bean.utils.http.connection;
 
 public class Constants {
     public static final String JSON_FILE_PATH_PROP = "jsonFilePath";

@@ -1,4 +1,4 @@
-package frm.bean.utils.exceptions;
+package frm.bean.utils.http.connection.exception;
 
 
 public class HttpURLConnectionFailException extends Exception {

@@ -1,4 +1,4 @@
-package frm.bean.utils.utils;
+package frm.bean.utils.http.connection;
 
 public class ConnectionInfo {
     private String user = Constants.USER_NAME;
