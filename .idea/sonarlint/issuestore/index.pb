@@ -14,3 +14,15 @@ o
 ?ejbs/src/test/java/frm/bean/utils/HttpOperationHandlerTest.java,a/5/a597ae5f03965fc21b954f1abda08abee31025ae
 q
 Aejbs/src/main/java/frm/bean/utils/utils/HttpOperationHandler.java,b/d/bd68e11787a084073b21209350d589acd23ecc9a
+>
+ear/.gitignore,2/8/28296ffc3e4482bcf04886d397fc26b65792e8a0
+?
+ejbs/.gitignore,a/1/a195602f9c911647ce463ac5e259d94fb7bf5891
+I
+primary-source/.gitignore,b/2/b2e80fa114764c50df487c88a238631be1102e16
+C
+projects/.gitignore,e/2/e218b910023ce22d7e951da91717f4d339af4bf4
+C
+servlets/.gitignore,5/f/5fadb16bb336ebde8e2931a67fc8c101e785654e
+u
+Eejbs/src/main/java/frm/bean/utils/utils/FhirCommunicationHandler.java,2/0/205036240a1bd679a14ca160820e246769b1de4b

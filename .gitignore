@@ -24,10 +24,7 @@ hs_err_pid*
 
 #Intellij Files
 *.iml
-.idea
-
-# Packages
-*.jar
+.idea*
 
 # Maven build files
 target
