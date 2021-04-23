@@ -1,5 +1,5 @@
 
-package frm.bean.utils.http.connection;
+package frm.bean.utils.json.objects;
 
 import com.fasterxml.jackson.annotation.*;
 

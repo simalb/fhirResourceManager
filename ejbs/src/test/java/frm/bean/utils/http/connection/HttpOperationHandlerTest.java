@@ -2,6 +2,8 @@ package frm.bean.utils.http.connection;
 
 
 import frm.bean.utils.http.connection.exception.HttpURLConnectionFailException;
+import frm.bean.utils.json.objects.Patient;
+import frm.bean.utils.json.utils.JsonManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;

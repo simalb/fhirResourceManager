@@ -1,9 +1,9 @@
 package frm.bean;
 
 import frm.bean.utils.http.connection.HttpOperationHandler;
-import frm.bean.utils.http.connection.JsonManager;
+import frm.bean.utils.json.utils.JsonManager;
 
-import frm.bean.utils.http.connection.Patient;
+import frm.bean.utils.json.objects.Patient;
 import frm.bean.utils.http.connection.ResultHandler;
 import frm.bean.utils.http.connection.exception.HttpURLConnectionFailException;
 

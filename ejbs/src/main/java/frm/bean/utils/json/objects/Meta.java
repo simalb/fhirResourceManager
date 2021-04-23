@@ -1,5 +1,5 @@
 
-package frm.bean.utils.http.connection;
+package frm.bean.utils.json.objects;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,50 +13,50 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "system",
-    "value",
-    "use"
+    "versionId",
+    "lastUpdated",
+    "source"
 })
 @Generated("jsonschema2pojo")
-public class Telecom {
+public class Meta {
 
-    @JsonProperty("system")
-    private String system;
-    @JsonProperty("value")
-    private String value;
-    @JsonProperty("use")
-    private String use;
+    @JsonProperty("versionId")
+    private String versionId;
+    @JsonProperty("lastUpdated")
+    private String lastUpdated;
+    @JsonProperty("source")
+    private String source;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("system")
-    public String getSystem() {
-        return system;
+    @JsonProperty("versionId")
+    public String getVersionId() {
+        return versionId;
     }
 
-    @JsonProperty("system")
-    public void setSystem(String system) {
-        this.system = system;
+    @JsonProperty("versionId")
+    public void setVersionId(String versionId) {
+        this.versionId = versionId;
     }
 
-    @JsonProperty("value")
-    public String getValue() {
-        return value;
+    @JsonProperty("lastUpdated")
+    public String getLastUpdated() {
+        return lastUpdated;
     }
 
-    @JsonProperty("value")
-    public void setValue(String value) {
-        this.value = value;
+    @JsonProperty("lastUpdated")
+    public void setLastUpdated(String lastUpdated) {
+        this.lastUpdated = lastUpdated;
     }
 
-    @JsonProperty("use")
-    public String getUse() {
-        return use;
+    @JsonProperty("source")
+    public String getSource() {
+        return source;
     }
 
-    @JsonProperty("use")
-    public void setUse(String use) {
-        this.use = use;
+    @JsonProperty("source")
+    public void setSource(String source) {
+        this.source = source;
     }
 
     @JsonAnyGetter

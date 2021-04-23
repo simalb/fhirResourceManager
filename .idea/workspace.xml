@@ -5,27 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ae298f-4f0a-4060-bbe9-12237b45058e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ear/ear.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ear/ear.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ear/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ear/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/ejbs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/ejbs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/FhirResourceManagerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/FhirResourceManagerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/exceptions/HttpURLConnectionFailException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/ConnectionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/ConnectionInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/FhirCommunicationHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/HttpConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/HttpConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/HttpOperationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/HttpOperationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/PropertiesReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/utils/ResultHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/ResultHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/src/test/java/frm/bean/utils/HttpOperationHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/test/java/frm/bean/utils/http/connection/HttpOperationHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejbs/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/primary-source/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/primary-source/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/logging/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/projects/logging/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/servlets/servlet/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/servlets/servlet/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/FhirResourceManagerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/FhirResourceManagerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Identifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Identifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/JsonManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/utils/JsonManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Meta.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Meta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Name.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Telecom.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Telecom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/http/connection/Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/main/java/frm/bean/utils/json/objects/Text.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejbs/src/test/java/frm/bean/utils/http/connection/HttpOperationHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ejbs/src/test/java/frm/bean/utils/http/connection/HttpOperationHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,8 +221,8 @@
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="frm.bean.utils.json.utils" />
-      <recent name="frm.bean.utils.http.connection" />
       <recent name="frm.bean.utils.json.objects" />
+      <recent name="frm.bean.utils.http.connection" />
       <recent name="frm.bean.utils" />
       <recent name="frm.bean" />
     </key>
@@ -289,22 +278,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpOperationHandlerTest (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ejbs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="frm.bean.utils.http.connection.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="frm.bean.utils.http.connection" />
-      <option name="MAIN_CLASS_NAME" value="frm.bean.utils.http.connection.HttpOperationHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="HttpOperationHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ejbs" />
       <extension name="coverage">
@@ -315,6 +288,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="java.test.frm.utils" />
       <option name="MAIN_CLASS_NAME" value="java.test.frm.utils.HttpOperationHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpOperationHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ejbs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="frm.bean.utils.json.objects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="frm.bean.utils.http.connection" />
+      <option name="MAIN_CLASS_NAME" value="frm.bean.utils.http.connection.HttpOperationHandlerTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">

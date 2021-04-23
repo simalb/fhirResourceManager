@@ -1,6 +1,7 @@
-package frm.bean.utils.http.connection;
+package frm.bean.utils.json.utils;
 
 import com.google.gson.Gson;
+import frm.bean.utils.json.objects.Patient;
 
 public class JsonManager {
 
