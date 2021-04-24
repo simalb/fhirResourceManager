@@ -1,34 +1,35 @@
 package frm.bean.utils.http.connection;
 
-
 import frm.bean.utils.http.connection.exception.HttpURLConnectionFailException;
 
+import javax.ejb.Stateless;
+import javax.inject.Inject;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 
+@Stateless
 public class HttpOperationHandler {
-
     protected HttpConnectionHandler httpConnectionHandler;
 
     public HttpOperationHandler() {
         this.httpConnectionHandler = new HttpConnectionHandler();
     }
 
-    public ResultHandler post(final String uri, final String data) throws HttpURLConnectionFailException {
+    public synchronized ResultHandler post(final String uri, final String data) throws HttpURLConnectionFailException {
 
         return doOperation(uri, "POST", data);
     }
 
-    public ResultHandler get(final String uri) throws HttpURLConnectionFailException {
+    public synchronized ResultHandler get(final String uri) throws HttpURLConnectionFailException {
 
         return doOperation(uri, "GET", null);
     }
 
 
-    public ResultHandler doOperation(final String uri, final String httpCommand, final String data) throws HttpURLConnectionFailException {
+    public synchronized ResultHandler doOperation(final String uri, final String httpCommand, final String data) throws HttpURLConnectionFailException {
         ResultHandler resultHandler = new ResultHandler();
 
         try {

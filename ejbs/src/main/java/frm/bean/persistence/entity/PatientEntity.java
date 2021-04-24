@@ -5,14 +5,23 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Data
+@Table(name = "Patients")
 public class PatientEntity {
 
+    //@Id
+    //@GeneratedValue
     @Id
-    @GeneratedValue
-    private int internalId;
+    @GeneratedValue(generator = “UUID”)
+    @GenericGenerator(
+            name = “UUID”,
+            strategy = “org.hibernate.id.UUIDGenerator”,
+    )
+    @Column(name = “id”, updatable = false, nullable = false)
+    private UUID internalId;
 
     private String url;
 

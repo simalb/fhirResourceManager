@@ -10,6 +10,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import javax.inject.Inject;
+
 import static frm.bean.FhirResourceManagerHandler.TEST_URI;
 
 
@@ -19,11 +21,15 @@ import static frm.bean.FhirResourceManagerHandler.TEST_URI;
 @RunWith(MockitoJUnitRunner.class)
 public class HttpOperationHandlerTest {
 
+    /*@Inject
+    private HttpOperationHandler httpOperationHandler;*/
+
     /**
      * The Json handler.
      */
     //JsonHandler jsonHandler = new JsonHandler();
-    HttpOperationHandler httpOperationHandler = new HttpOperationHandler();
+
+    //HttpOperationHandler httpOperationHandler = new HttpOperationHandler();
 
     /**
      * The Get interface list response.
@@ -87,6 +93,7 @@ public class HttpOperationHandlerTest {
     public void testGet() {
         System.out.println("*** Starting testGet");
         try {
+            HttpOperationHandler httpOperationHandler = new HttpOperationHandler();
             ResultHandler resultHandler = httpOperationHandler.get(TEST_URI);
 
             Patient patient = JsonManager.getPatientFromJson(resultHandler.getResultMessage());

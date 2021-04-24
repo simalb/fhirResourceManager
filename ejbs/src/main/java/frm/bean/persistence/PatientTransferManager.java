@@ -7,15 +7,14 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.ejb.Local;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.*;
 
 @Startup
 @Singleton
+@Local
 public class PatientTransferManager {
 
     private static final String PERSISTENCE_UNIT_NAME = "PatientTransferService";
@@ -23,12 +22,20 @@ public class PatientTransferManager {
 
     private EntityManager em;
 
+    @PersistenceContext
+    private EntityManager containerEm;
+
+    @PersistenceUnit
+    private EntityManagerFactory emf;
+
     @PostConstruct
     public void init() {
         System.out.println("*** Starting  PatientTransferManager execution.");
 
         factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         em = factory.createEntityManager();
+
+        //em = emf.createEntityManager();
     }
 
     @PreDestroy

@@ -10,11 +10,10 @@ import frm.bean.utils.http.connection.exception.HttpURLConnectionFailException;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.Singleton;
 import javax.ejb.Startup;
+import javax.ejb.Stateless;
 
-@Startup
-@Singleton
+@Stateless
 public class FhirResourceManagerHandler {
 
         HttpOperationHandler httpOperationHandler = new HttpOperationHandler();

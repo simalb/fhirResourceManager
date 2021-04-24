@@ -1,5 +1,6 @@
 package frm.bean.utils.http.connection;
 
+import javax.ejb.Stateless;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
