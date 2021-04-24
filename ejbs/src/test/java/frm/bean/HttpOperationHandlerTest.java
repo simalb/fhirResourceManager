@@ -31,7 +31,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @RunWith(MockitoJUnitRunner.class)
 public class HttpOperationHandlerTest {
 
-    public static final String TEST_URI= "http://hapi.fhir.org/baseR4/Patient/1854776";
+    public static final String TEST_URI = "http://hapi.fhir.org/baseR4/Patient/1854776";
+    public static final String EXPECTED_JSON_STRING = "{\"internalId\":22,\"url\":\"http://hapi.fhir.org/baseR4/Patient/1854776\",\"creationDate\":\"Jan 1, 2016 12:00:00 AM\",\"family\":\"Newman\",\"given\":[\"Simon\",\"Paul\"],\"prefix\":\"\",\"suffix\":\"\",\"gender\":\"male\",\"birthDate\":\"1998-03-17\"}";
 
     /*@Inject
     private HttpOperationHandler httpOperationHandler;*/
@@ -55,9 +56,9 @@ public class HttpOperationHandlerTest {
 
             patientEntity.setCreationDate(myDate);
 
-           /* String jsonObject = new Gson().toJson(patientEntity);
+            String jsonObject = new Gson().toJson(ConverterUtility.convertPatientEntityToPatientJsonObject(patientEntity));
             //String jsonObject = JsonManager.getJsonObjectFromPatientEntity(patientEntity);
-            assertEquals("", jsonObject);*/
+            assertEquals(EXPECTED_JSON_STRING, jsonObject);
 
 
 

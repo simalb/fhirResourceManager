@@ -28,6 +28,7 @@ out/
 *.iml
 *.iws
 *.ipr
+servlet/servlet.iml
 
 # Maven build files
 target/

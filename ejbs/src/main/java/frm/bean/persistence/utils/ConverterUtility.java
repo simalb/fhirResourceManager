@@ -2,6 +2,7 @@ package frm.bean.persistence.utils;
 
 import frm.bean.persistence.entity.PatientEntity;
 import frm.bean.utils.json.objects.Patient;
+import frm.bean.utils.json.objects.PatientJsonObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -35,6 +36,21 @@ public class ConverterUtility {
         patientEntity.setBirthDate(patient.getBirthDate());
 
         return patientEntity;
+    }
+
+    public static PatientJsonObject convertPatientEntityToPatientJsonObject(PatientEntity patientEntity) {
+        PatientJsonObject patientJsonObject = new PatientJsonObject();
+        patientJsonObject.setInternalId(patientEntity.getInternalId());
+        patientJsonObject.setUrl(patientEntity.getUrl());
+        patientJsonObject.setCreationDate(patientEntity.getCreationDate());
+        patientJsonObject.setFamily(patientEntity.getFamily());
+        patientJsonObject.setGiven(patientEntity.getGiven());
+        patientJsonObject.setPrefix(patientEntity.getPrefix());
+        patientJsonObject.setSuffix(patientEntity.getSuffix());
+        patientJsonObject.setGender(patientEntity.getGender());
+        patientJsonObject.setBirthDate(patientEntity.getBirthDate());
+
+        return patientJsonObject;
     }
 
     private Date parseTimestamp(String timestamp) {
