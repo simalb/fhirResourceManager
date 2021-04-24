@@ -2,6 +2,7 @@ package frm.bean.utils.json.utils;
 
 import com.google.gson.Gson;
 import frm.bean.persistence.entity.PatientEntity;
+import frm.bean.persistence.utils.ConverterUtility;
 import frm.bean.utils.json.objects.Patient;
 
 public class JsonManager {
@@ -12,7 +13,7 @@ public class JsonManager {
     }
 
     public static String getJsonObjectFromPatientEntity(PatientEntity patientEntity) {
-        String jsonObject = new Gson().toJson(patientEntity);
+        String jsonObject = new Gson().toJson(ConverterUtility.convertPatientEntityToPatientJsonObject(patientEntity));
         return jsonObject;
     }
 }
