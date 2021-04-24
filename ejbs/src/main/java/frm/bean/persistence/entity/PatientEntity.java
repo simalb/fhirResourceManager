@@ -19,9 +19,11 @@ public class PatientEntity {
             strategy = “org.hibernate.id.UUIDGenerator”,
     )*/
     @GeneratedValue
+    private int internalId;
     //@Column(name = “id”, updatable = false, nullable = false)
-    private UUID internalId;
+    //private UUID internalId;
 
+    @Column(name = "url", nullable = false, unique = true)
     private String url;
 
     @Temporal(TemporalType.TIMESTAMP)

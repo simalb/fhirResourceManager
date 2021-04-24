@@ -12,6 +12,7 @@
       <module>ejbs</module>
       <module>ear</module>
    </modules>
+   
    <build>
       <pluginManagement>
          <plugins>
