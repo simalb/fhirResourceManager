@@ -12,15 +12,14 @@ import java.util.UUID;
 @Table(name = "Patients")
 public class PatientEntity {
 
-    //@Id
-    //@GeneratedValue
     @Id
-    @GeneratedValue(generator = “UUID”)
+    /*@GeneratedValue(generator = “UUID”)
     @GenericGenerator(
             name = “UUID”,
             strategy = “org.hibernate.id.UUIDGenerator”,
-    )
-    @Column(name = “id”, updatable = false, nullable = false)
+    )*/
+    @GeneratedValue
+    //@Column(name = “id”, updatable = false, nullable = false)
     private UUID internalId;
 
     private String url;

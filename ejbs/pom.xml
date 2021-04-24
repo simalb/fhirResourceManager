@@ -62,11 +62,11 @@
            <version>RELEASE</version>
            <scope>compile</scope>
        </dependency>
-      <dependency>
+      <!--dependency>
          <groupId>org.hibernate</groupId>
          <artifactId>hibernate-annotations</artifactId>
          <version>3.4.0</version>
-      </dependency>
+      </dependency-->
 
    </dependencies>
    <build>

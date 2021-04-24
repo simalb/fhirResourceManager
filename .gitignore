@@ -23,12 +23,20 @@
 hs_err_pid*
 
 #Intellij Files
+out/
+.idea/
 *.iml
-.idea*
+*.iws
+*.ipr
 
 # Maven build files
-target
-reports
+target/
+reports/
+helm-home/
+helm-target/
+.m2/
+*.out
+*.log
 
 # Merge files
 *.orig
@@ -36,4 +44,11 @@ reports
 
 # jboss files
 transaction.log
+
+# PMD reports
+*.pmd
+
+# Git merge files
+*.orig
+
 
