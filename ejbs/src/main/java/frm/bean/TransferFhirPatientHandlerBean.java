@@ -55,4 +55,19 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
         return JsonManager.getJsonObjectFromPatientEntity(patientPersistenceManager.getPatientFromUrl(fhirUrl));
     }
 
+    @Override
+    public String getFhirPatientFromFhirServer(String id) {
+        return getJsonFhirPatientFromDB(PUBLIC_TEST_SERVER_URI + id);
+    }
+
+    @Override
+    public String createFhirPatientOnFhirServer(String fhirPatientJson) {
+        try {
+            return httpOperationHandler.post(PUBLIC_TEST_SERVER_URI, fhirPatientJson).getResultMessage();
+        } catch (HttpURLConnectionFailException e) {
+            System.out.println("Error occurred: " + e.getMessage());
+            return "{}";
+        }
+    }
+
 }
