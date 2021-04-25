@@ -8,6 +8,8 @@ import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Arrays;
+import java.util.List;
 
 @Startup
 @Singleton
@@ -15,7 +17,7 @@ import javax.validation.constraints.NotNull;
 public class PatientPersistenceManagerBean {
 
     @PersistenceContext
-    private EntityManager em;
+    private static EntityManager em;
 
     //@PersistenceUnit
     //private EntityManagerFactory emf;
@@ -27,6 +29,10 @@ public class PatientPersistenceManagerBean {
         System.out.println("*** Starting  PatientTransferManager execution.");
         //EntityManagerFactory factory = Persistence.createEntityManagerFactory("PatientTransferService");
         //em = factory.createEntityManager();
+
+        //h2 native query to show tables and columns
+        runNativeQuery("SHOW TABLES");
+        runNativeQuery("SHOW COLUMNS from Patients");
     }
 
     @PreDestroy
@@ -60,6 +66,15 @@ public class PatientPersistenceManagerBean {
         } catch (final NoResultException nre) {
             System.out.println("ERROR TO MANAGE - Requested patient not found DB: " + url);
             return null;
+        }
+    }
+
+    private static void runNativeQuery(String s) {
+        System.out.println("--------\n" + s);
+        Query query = em.createNativeQuery(s);
+        List list = query.getResultList();
+        for (Object o : list) {
+            System.out.println(Arrays.toString((Object[]) o));
         }
     }
 }
