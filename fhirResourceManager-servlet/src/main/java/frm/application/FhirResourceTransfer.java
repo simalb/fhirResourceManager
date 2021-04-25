@@ -12,34 +12,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@Path("/fhir-resource")
+//@Path(value="/fhir-resource")
 public class FhirResourceTransfer extends HttpServlet {
 
     //@Inject
     //TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;
 
-    @GET
+    /*@GET
     public String getFhirResource() {
 
         return "Hello by FhirResourceTransfer";
     }
 
     @GET
-    @Path("{id}")
-    @Produces("application/json")
+    @Path(value="{id}")
+    @Produces(value="application/json")
     public void getFhirResource(@PathParam("id") String id) {
         TransferFhirPatientHandlerBean transferFhirPatientHandlerBean = new TransferFhirPatientHandlerBean();
         transferFhirPatientHandlerBean.getFhirPatientFromFhirServer(id);
     }
 
     @POST
-    @Consumes("application/json")
+    @Consumes(value="application/json")
     public String createFhirResource(String json) {
         TransferFhirPatientHandlerBean transferFhirPatientHandlerBean = new TransferFhirPatientHandlerBean();
         return transferFhirPatientHandlerBean.createFhirPatientOnFhirServer(json);
-    }
+    }*/
 
-    /*public void doGet(HttpServletRequest request,
+    public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
             throws IOException, ServletException {
 
@@ -67,5 +67,5 @@ public class FhirResourceTransfer extends HttpServlet {
 
         writer.println("</body>");
         writer.println("</html>");
-    }*/
+    }
 }
