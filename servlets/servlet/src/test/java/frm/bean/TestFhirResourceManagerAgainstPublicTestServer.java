@@ -9,6 +9,7 @@ import frm.bean.utils.json.objects.Patient;
 import frm.bean.utils.json.JsonManager;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -78,7 +79,7 @@ public class TestFhirResourceManagerAgainstPublicTestServer {
 
             String jsonObject = JsonManager.getJsonObjectFromPatientEntity(patientEntity);
 
-            assertEquals(EXPECTED_JSON_STRING, jsonObject);
+            Assertions.assertEquals(EXPECTED_JSON_STRING, jsonObject);
 
             System.out.println("\n*** Ending testGetPatientFromTestServerAndConvertMethods\n");
 

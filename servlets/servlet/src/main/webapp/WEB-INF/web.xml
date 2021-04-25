@@ -15,7 +15,7 @@
         </servlet-class>
         <init-param>
             <param-name>com.sun.jersey.config.property.packages</param-name>
-            <param-value>frm.rest</param-value>
+            <param-value>frm.frm.application</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
