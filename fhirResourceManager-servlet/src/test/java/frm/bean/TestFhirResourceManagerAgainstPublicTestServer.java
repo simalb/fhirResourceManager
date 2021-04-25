@@ -83,8 +83,11 @@ public class TestFhirResourceManagerAgainstPublicTestServer {
 
             System.out.println("\n*** Ending testGetPatientFromTestServerAndConvertMethods\n");
 
-        } catch (HttpURLConnectionFailException | ParseException e) {
-            System.out.println("*** ERROR to be managed!!! - testGetPatientFromTestServerAndConvertMethods");
+        } catch (ParseException e) {
+            System.out.println("*** ERROR to be managed!!! - ParseException");
+            e.printStackTrace();
+        } catch (HttpURLConnectionFailException  e) {
+            System.out.println("*** ERROR to be managed!!! - HttpURLConnectionFailException");
             e.printStackTrace();
         }
     }
@@ -108,8 +111,11 @@ public class TestFhirResourceManagerAgainstPublicTestServer {
 
             System.out.println("\n*** Ending testPostPatientToTestServer\n");
 
-        } catch (HttpURLConnectionFailException | IOException e) {
-            System.out.println("*** ERROR to be managed!!! - testPostPatientToTestServer");
+        } catch (HttpURLConnectionFailException e) {
+            System.out.println("*** ERROR to be managed!!! - HttpURLConnectionFailException");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("*** ERROR to be managed!!! - IOException");
             e.printStackTrace();
         }
     }

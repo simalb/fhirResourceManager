@@ -1,15 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 
-    <display-name>FhirResourceTransfer</display-name>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
 
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
+    <display-name>FhirResourceManager Application</display-name>
+    <description>
+        FhirResourceManager web application.
+    </description>
 
     <servlet>
-        <servlet-name>Jersey REST Service</servlet-name>
+        <servlet-name>fhirResourceManager-servlet</servlet-name>
+        <servlet-class>frm.application.FhirResourceTransfer</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>fhirResourceManager-servlet</servlet-name>
+        <url-pattern>/fhir-resource</url-pattern>
+    </servlet-mapping>
+
+</web-app>
+
+
+
+<!-- Other attempt -->
+
+<!--!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>FhirResourceManager Application</display-name>
+
+    <servlet>
+        <servlet-name>fhirResourceManager-servlet-1.0</servlet-name>
         <servlet-class>
             com.sun.jersey.spi.container.servlet.ServletContainer
         </servlet-class>
@@ -20,8 +45,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>FhirResourceTransfer</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
+        <servlet-name>fhirResourceManager-servlet-1.0</servlet-name>
+        <url-pattern>/fhir-resource</url-pattern>
     </servlet-mapping>
-
-</web-app>
+</web-app-->
