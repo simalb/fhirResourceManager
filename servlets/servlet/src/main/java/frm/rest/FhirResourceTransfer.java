@@ -5,27 +5,30 @@ import javax.ws.rs.*;
 
 import frm.bean.TransferFhirPatientHandlerBean;
 
-@Path("/fhir-resource/")
+@Path(value="/fhir-resource")
 public class FhirResourceTransfer {
 
-    @Inject
-    TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;
+    //@Inject
+    //TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;
 
     @GET
     public String getFhirResource() {
+
         return "Hello by FhirResourceTransfer";
     }
 
     @GET
-    @Path("{id}")
-    @Produces("application/json")
+    @Path(value="{id}")
+    @Produces(value="application/json")
     public void getFhirResource(@PathParam("id") String id) {
+        TransferFhirPatientHandlerBean transferFhirPatientHandlerBean = new TransferFhirPatientHandlerBean();
         transferFhirPatientHandlerBean.getFhirPatientFromFhirServer(id);
     }
 
     @POST
-    @Consumes("application/json")
+    @Consumes(value="application/json")
     public String createFhirResource(String json) {
+        TransferFhirPatientHandlerBean transferFhirPatientHandlerBean = new TransferFhirPatientHandlerBean();
         return transferFhirPatientHandlerBean.createFhirPatientOnFhirServer(json);
     }
 }
