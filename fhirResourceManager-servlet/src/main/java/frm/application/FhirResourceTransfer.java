@@ -1,6 +1,5 @@
 package frm.application;
 
-import javax.inject.Inject;
 import javax.ws.rs.*;
 
 import frm.bean.TransferFhirPatientHandlerBean;

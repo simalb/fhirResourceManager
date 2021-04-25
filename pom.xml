@@ -1,12 +1,12 @@
 <project>
    <modelVersion>4.0.0</modelVersion>
    <groupId>root</groupId>
+   <artifactId>fhirResourceManager-project</artifactId>
    <version>1.0</version>
-   <artifactId>project</artifactId>
    <packaging>pom</packaging>
-   <name>project</name>
+   <name>fhirResourceManager-project</name>
    <modules>
-      <module>servlets</module>
+      <module>fhirResourceManager-servlet</module>
    </modules>
    
    <build>
@@ -25,8 +25,8 @@
    <dependencyManagement>
       <dependencies>
          <dependency>
-            <groupId>root.project.servlets</groupId>
-            <artifactId>servlet</artifactId>
+            <groupId>root.project</groupId>
+            <artifactId>fhirResourceManager-servlet</artifactId>
             <version>1.0</version>
             <type>war</type>
          </dependency>

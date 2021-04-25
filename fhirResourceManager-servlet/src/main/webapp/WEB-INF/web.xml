@@ -8,20 +8,20 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-    <!--servlet>
+    <servlet>
         <servlet-name>Jersey REST Service</servlet-name>
         <servlet-class>
             com.sun.jersey.spi.container.servlet.ServletContainer
         </servlet-class>
         <init-param>
             <param-name>com.sun.jersey.config.property.packages</param-name>
-            <param-value>frm.frm.application</param-value>
+            <param-value>frm.application</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>FhirResourceTransfer</servlet-name>
         <url-pattern>/rest/*</url-pattern>
-    </servlet-mapping-->
+    </servlet-mapping>
 
 </web-app>
