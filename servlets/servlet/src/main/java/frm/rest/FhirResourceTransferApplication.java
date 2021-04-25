@@ -10,7 +10,7 @@ public class FhirResourceTransferApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         Set<Class<?>> s = new HashSet<Class<?>>();
-        s.add(FhirResourceTransferResource.class);
+        s.add(FhirResourceTransfer.class);
         return s;
     }
 }

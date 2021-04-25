@@ -1,4 +1,4 @@
-package frm.bean.utils.http.connection;
+package frm.bean.http.connection;
 
 public class ResultHandler {
     private String resultMessage;

@@ -1,13 +1,6 @@
 package frm.bean;
 
 
-import frm.bean.persistence.entity.PatientEntity;
-import frm.bean.persistence.utils.ConverterUtility;
-import frm.bean.utils.http.connection.HttpOperationHandler;
-import frm.bean.utils.http.connection.ResultHandler;
-import frm.bean.utils.http.connection.exception.HttpURLConnectionFailException;
-import frm.bean.utils.json.objects.Patient;
-import frm.bean.utils.json.utils.JsonManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;

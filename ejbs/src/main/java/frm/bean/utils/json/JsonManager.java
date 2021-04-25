@@ -1,4 +1,4 @@
-package frm.bean.utils.json.utils;
+package frm.bean.utils.json;
 
 import com.google.gson.Gson;
 import frm.bean.persistence.entity.PatientEntity;

@@ -13,15 +13,8 @@ import java.util.UUID;
 public class PatientEntity {
 
     @Id
-    /*@GeneratedValue(generator = “UUID”)
-    @GenericGenerator(
-            name = “UUID”,
-            strategy = “org.hibernate.id.UUIDGenerator”,
-    )*/
-    @GeneratedValue
-    private int internalId;
-    //@Column(name = “id”, updatable = false, nullable = false)
-    //private UUID internalId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID internalId;
 
     @Column(name = "url", nullable = false, unique = true)
     private String url;

@@ -1,14 +1,14 @@
 package frm.bean;
 
-import frm.bean.persistence.PatientPersistenceManager;
+import frm.bean.persistence.PatientPersistenceManagerBean;
 import frm.bean.persistence.entity.PatientEntity;
 import frm.bean.persistence.utils.ConverterUtility;
-import frm.bean.utils.http.connection.HttpOperationHandler;
-import frm.bean.utils.json.utils.JsonManager;
+import frm.bean.http.connection.HttpOperationHandlerBean;
+import frm.bean.utils.json.JsonManager;
 
 import frm.bean.utils.json.objects.Patient;
-import frm.bean.utils.http.connection.ResultHandler;
-import frm.bean.utils.http.connection.exception.HttpURLConnectionFailException;
+import frm.bean.http.connection.ResultHandler;
+import frm.bean.utils.exception.HttpURLConnectionFailException;
 
 
 import javax.annotation.PostConstruct;
@@ -20,10 +20,10 @@ import javax.inject.Inject;
 public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandler {
 
     @Inject
-    HttpOperationHandler httpOperationHandler;
+    HttpOperationHandlerBean httpOperationHandlerBean;
 
     @Inject
-    PatientPersistenceManager patientPersistenceManager;
+    PatientPersistenceManagerBean patientPersistenceManagerBean;
 
     @PostConstruct
     public void init() {
@@ -36,23 +36,26 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
     }
 
     @Override
-    public void transferFhirPatientFromFhirServerToDB(String fhirUrl) {
+    public boolean transferFhirPatientFromFhirServerToDB(String fhirUrl) {
 
         try {
-            ResultHandler resultHandler = httpOperationHandler.get(fhirUrl);
+            ResultHandler resultHandler = httpOperationHandlerBean.get(fhirUrl);
             Patient patient = JsonManager.getPatientFromJsonObject(resultHandler.getResultMessage());
 
             PatientEntity patientEntity = ConverterUtility.getCompletePatientEntity(patient, fhirUrl);
-            patientPersistenceManager.createPatient(patientEntity);
+            patientPersistenceManagerBean.createPatient(patientEntity);
+
+            return true;
 
         } catch (HttpURLConnectionFailException e) {
-            System.out.println("Error occurred: " + e.getMessage());
+            System.out.println("TO BE MANAGED - Error occurred: " + e.getMessage());
+            return false;
         }
     }
 
     @Override
     public String getJsonFhirPatientFromDB(String fhirUrl) {
-        return JsonManager.getJsonObjectFromPatientEntity(patientPersistenceManager.getPatientFromUrl(fhirUrl));
+        return JsonManager.getJsonObjectFromPatientEntity(patientPersistenceManagerBean.getPatientFromUrl(fhirUrl));
     }
 
     @Override
@@ -63,9 +66,9 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
     @Override
     public String createFhirPatientOnFhirServer(String fhirPatientJson) {
         try {
-            return httpOperationHandler.post(PUBLIC_TEST_SERVER_URI, fhirPatientJson).getResultMessage();
+            return httpOperationHandlerBean.post(PUBLIC_TEST_SERVER_URI, fhirPatientJson).getResultMessage();
         } catch (HttpURLConnectionFailException e) {
-            System.out.println("Error occurred: " + e.getMessage());
+            System.out.println("TO BE MANAGED - Error occurred: " + e.getMessage());
             return "{}";
         }
     }
