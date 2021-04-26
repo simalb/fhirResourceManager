@@ -18,8 +18,10 @@ public class FhirResourceTransfer extends HttpServlet {
     TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;
 
     @Override
-    public void doGet(HttpServletRequest request,
-                      HttpServletResponse response) {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) {
+
+        System.out.println("FhirResourceTransfer - doGet");
+
         try {
             response.setContentType("text/html");
             PrintWriter writer = response.getWriter();
@@ -31,8 +33,7 @@ public class FhirResourceTransfer extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
-
-        //TransferFhirPatientHandlerBean transferFhirPatientHandlerBean = new TransferFhirPatientHandlerBean();
+        System.out.println("FhirResourceTransfer - doPost");
 
         response.setContentType("application/json");
         final String requestBody = readRequestBody(request);
