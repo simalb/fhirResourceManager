@@ -2,7 +2,6 @@ package frm.bean.http.connection;
 
 import frm.bean.utils.exception.HttpURLConnectionFailException;
 
-import javax.ejb.Stateless;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -10,8 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-@Stateless
-public class HttpOperationHandlerBean {
+public class HttpOperationHandler {
 
     public synchronized ResultHandler post(final String uri, final String data) throws HttpURLConnectionFailException {
 

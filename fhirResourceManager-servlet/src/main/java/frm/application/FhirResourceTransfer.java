@@ -4,8 +4,6 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServlet;
 
 import frm.bean.TransferFhirPatientHandlerBean;
-import frm.bean.http.connection.HttpOperationHandlerBean;
-import frm.bean.persistence.PatientPersistenceManagerBean;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class FhirResourceTransfer extends HttpServlet {
 
-    /*@Inject
-    TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;*/
+    @Inject
+    TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;
 
     @Override
     public void doGet(HttpServletRequest request,
@@ -34,7 +32,7 @@ public class FhirResourceTransfer extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
 
-        TransferFhirPatientHandlerBean transferFhirPatientHandlerBean = new TransferFhirPatientHandlerBean();
+        //TransferFhirPatientHandlerBean transferFhirPatientHandlerBean = new TransferFhirPatientHandlerBean();
 
         response.setContentType("application/json");
         final String requestBody = readRequestBody(request);

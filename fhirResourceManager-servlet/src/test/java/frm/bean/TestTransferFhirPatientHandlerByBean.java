@@ -1,26 +1,18 @@
 package frm.bean;
 
-import frm.bean.http.connection.HttpOperationHandlerBean;
+import frm.bean.http.connection.HttpOperationHandler;
 import frm.bean.http.connection.ResultHandler;
-import frm.bean.persistence.entity.PatientEntity;
-import frm.bean.persistence.utils.ConverterUtility;
 import frm.bean.utils.exception.HttpURLConnectionFailException;
 import frm.bean.utils.json.JsonManager;
 import frm.bean.utils.json.objects.Patient;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.util.Date;
-import java.util.Locale;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -31,14 +23,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestTransferFhirPatientHandlerByBean {
 
     public static final String TEST_URI = "http://hapi.fhir.org/baseR4/Patient";
-    public static final String TEST_ID = "/1854776";
     public static final String JSON_OBJECT_EXAMPLE_FILE = "src/test/resources/JsonObjectExample.json";
 
-    public static HttpOperationHandlerBean httpOperationHandlerBean;
+    public static HttpOperationHandler httpOperationHandlerBean;
 
     @BeforeClass
     public static void setup()  {
-        httpOperationHandlerBean = new HttpOperationHandlerBean();
+        httpOperationHandlerBean = new HttpOperationHandler();
     }
 
     @Test
@@ -61,10 +52,8 @@ public class TestTransferFhirPatientHandlerByBean {
 
         } catch (HttpURLConnectionFailException e) {
             System.out.println("*** ERROR to be managed!!! - HttpURLConnectionFailException");
-            e.printStackTrace();
         } catch (IOException e) {
             System.out.println("*** ERROR to be managed!!! - IOException");
-            e.printStackTrace();
         }
     }
 

@@ -2,7 +2,7 @@ package frm.bean;
 
 import frm.bean.persistence.entity.PatientEntity;
 import frm.bean.persistence.utils.ConverterUtility;
-import frm.bean.http.connection.HttpOperationHandlerBean;
+import frm.bean.http.connection.HttpOperationHandler;
 import frm.bean.http.connection.ResultHandler;
 import frm.bean.utils.exception.HttpURLConnectionFailException;
 import frm.bean.utils.json.objects.Patient;
@@ -37,11 +37,11 @@ public class TestFhirResourceManagerAgainstPublicTestServer {
     public static final String JSON_OBJECT_EXAMPLE_FILE = "src/test/resources/JsonObjectExample.json";
     public static final String RESPONSE_JSON_OBJECT_EXAMPLE_JSON ="src/test/resources/ResponseJsonObjectExample.json";
 
-    public static HttpOperationHandlerBean httpOperationHandlerBean;
+    public static HttpOperationHandler httpOperationHandlerBean;
 
     @BeforeClass
     public static void setup()  {
-        httpOperationHandlerBean = new HttpOperationHandlerBean();
+        httpOperationHandlerBean = new HttpOperationHandler();
     }
 
     @Test
