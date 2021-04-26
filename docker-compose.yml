@@ -6,6 +6,10 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5544:5544
 
   fhirResourceManager:
     image: fhir-resource-manager:1.0
