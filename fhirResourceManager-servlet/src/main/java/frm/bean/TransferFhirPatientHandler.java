@@ -4,11 +4,12 @@ public interface TransferFhirPatientHandler {
 
     public static final String PUBLIC_TEST_SERVER_URI = "http://hapi.fhir.org/baseR4/Patient/";
 
-    public boolean transferFhirPatientFromFhirServerToDB(String fhirUrl);
+    //JAVA TEST - 1 READ AND TRANSFER A FHIR RESOURCE
+    public boolean transferFhirPatient(String fhirUrl);
 
-    public String getJsonFhirPatientFromDB(String fhirUrl);
+    //2 GET THE COPY
+    public String transferedPatient(String fhirUrl);
 
-    public String getFhirPatientFromFhirServer(String id);
-
-    public String createFhirPatientOnFhirServer(String fhirPatientJson);
+    //4 FHIR TEST SERVER
+    public String createPatientOnPublicFhirServer(String fhirPatientJson);
 }

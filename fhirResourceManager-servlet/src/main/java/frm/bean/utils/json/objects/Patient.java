@@ -2,6 +2,7 @@
 package frm.bean.utils.json.objects;
 
 import com.fasterxml.jackson.annotation.*;
+import lombok.ToString;
 
 import javax.annotation.Generated;
 import java.util.HashMap;
@@ -21,6 +22,8 @@ import java.util.Map;
     "birthDate",
     "address"
 })
+
+@ToString
 @Generated("jsonschema2pojo")
 public class Patient {
 

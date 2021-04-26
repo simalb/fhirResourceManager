@@ -36,7 +36,7 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
     }
 
     @Override
-    public boolean transferFhirPatientFromFhirServerToDB(String fhirUrl) {
+    public boolean transferFhirPatient(String fhirUrl) {
 
         try {
             ResultHandler resultHandler = httpOperationHandlerBean.get(fhirUrl);
@@ -54,17 +54,12 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
     }
 
     @Override
-    public String getJsonFhirPatientFromDB(String fhirUrl) {
-        return JsonManager.getJsonObjectFromPatientEntity(patientPersistenceManagerBean.getPatientFromUrl(fhirUrl));
+    public String transferedPatient(String fhirUrl) {
+        return JsonManager.getJsonObjectFromPatientEntity(patientPersistenceManagerBean.getPatientFromDbTableByUrl(fhirUrl));
     }
 
     @Override
-    public String getFhirPatientFromFhirServer(String id) {
-        return getJsonFhirPatientFromDB(PUBLIC_TEST_SERVER_URI + id);
-    }
-
-    @Override
-    public String createFhirPatientOnFhirServer(String fhirPatientJson) {
+    public String createPatientOnPublicFhirServer(String fhirPatientJson) {
         try {
             return httpOperationHandlerBean.post(PUBLIC_TEST_SERVER_URI, fhirPatientJson).getResultMessage();
         } catch (HttpURLConnectionFailException e) {

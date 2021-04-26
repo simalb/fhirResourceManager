@@ -40,6 +40,6 @@ public class ResultHandler {
     }
 
     public String toString(){
-        return resultMessage + " - response code: " + Integer.toString(code);
+        return resultMessage + " - response code: " + code;
     }
 }

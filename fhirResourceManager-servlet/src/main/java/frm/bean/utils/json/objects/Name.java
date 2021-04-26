@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.annotation.Generated;
 
 import com.fasterxml.jackson.annotation.*;
+import lombok.ToString;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -15,6 +16,8 @@ import com.fasterxml.jackson.annotation.*;
     "prefix",
     "suffix"
 })
+
+@ToString
 @Generated("jsonschema2pojo")
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class Name {

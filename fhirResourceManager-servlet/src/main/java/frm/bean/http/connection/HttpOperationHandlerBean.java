@@ -30,6 +30,8 @@ public class HttpOperationHandlerBean {
             HttpURLConnection conn = prepareConnection(uri, httpCommand);
 
             if (data != null) {
+                System.out.println("Request body " + data);
+
                 conn.setDoOutput(true);
                 conn.getOutputStream().write(data.getBytes());
                 conn.getOutputStream().flush();
@@ -63,6 +65,7 @@ public class HttpOperationHandlerBean {
                 response = response.concat(output);
             }
             resultHandler.setResultMessage(response);
+            System.out.println("Response body " + resultHandler.getResultMessage());
 
             br.close();
             conn.disconnect();

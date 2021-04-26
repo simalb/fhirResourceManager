@@ -54,7 +54,7 @@ public class PatientPersistenceManagerBean {
         return em.getReference(PatientEntity.class, internalId);
     }
 
-    public PatientEntity getPatientFromUrl(@NotNull final String url) {
+    public PatientEntity getPatientFromDbTableByUrl(@NotNull final String url) {
         System.out.println("Requested patient from DB: " + url);
         TypedQuery<PatientEntity> q = em.createQuery("select p from PatientEntity p where p.url=:url", PatientEntity.class);
         q.setParameter("url", url);

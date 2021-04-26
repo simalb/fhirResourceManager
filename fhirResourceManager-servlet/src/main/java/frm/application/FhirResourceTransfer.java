@@ -1,71 +1,50 @@
 package frm.application;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServlet;
-import javax.ws.rs.*;
 
 import frm.bean.TransferFhirPatientHandlerBean;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
+import java.util.stream.Stream;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//@Path(value="/fhir-resource")
 public class FhirResourceTransfer extends HttpServlet {
 
-    //@Inject
-    //TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;
-
-    /*@GET
-    public String getFhirResource() {
-
-        return "Hello by FhirResourceTransfer";
-    }
-
-    @GET
-    @Path(value="{id}")
-    @Produces(value="application/json")
-    public void getFhirResource(@PathParam("id") String id) {
-        TransferFhirPatientHandlerBean transferFhirPatientHandlerBean = new TransferFhirPatientHandlerBean();
-        transferFhirPatientHandlerBean.getFhirPatientFromFhirServer(id);
-    }
-
-    @POST
-    @Consumes(value="application/json")
-    public String createFhirResource(String json) {
-        TransferFhirPatientHandlerBean transferFhirPatientHandlerBean = new TransferFhirPatientHandlerBean();
-        return transferFhirPatientHandlerBean.createFhirPatientOnFhirServer(json);
-    }*/
+    @Inject
+    TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
-            throws IOException, ServletException {
+            throws IOException {
 
-        response.setContentType("text/html");
-        PrintWriter writer = response.getWriter();
-        writer.println("<html>");
-        writer.println("<head>");
-        writer.println("<title>Sample Application Servlet Page</title>");
-        writer.println("</head>");
-        writer.println("<body bgcolor=white>");
+            response.setContentType("text/html");
+            PrintWriter writer = response.getWriter();
+            writer.println("Welcome to Fhir Resource Transfer Servlet");
 
-        writer.println("<table border=\"0\" cellpadding=\"10\">");
-        writer.println("<tr>");
-        writer.println("<td>");
-        writer.println("<img src=\"images/Pivotal_Logo.png\">");
-        writer.println("</td>");
-        writer.println("<td>");
-        writer.println("<h1>Sample Application Servlet</h1>");
-        writer.println("</td>");
-        writer.println("</tr>");
-        writer.println("</table>");
+    }
 
-        writer.println("This is the output of a servlet that is part of");
-        writer.println("the Hello, World application.");
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        writer.println("</body>");
-        writer.println("</html>");
+        response.setContentType("application/json");
+        String responseJson= transferFhirPatientHandlerBean.createPatientOnPublicFhirServer(readRequestBody(request));
+        response.getWriter().write(responseJson);
+
+    }
+
+    protected String readRequestBody(final HttpServletRequest request) {
+
+        final StringBuilder stringBuilder = new StringBuilder();
+
+        try (final Stream<String> stream = request.getReader().lines()) {
+            stream.forEach(line -> stringBuilder.append(line.trim()));
+        } catch (IOException e) {
+            System.out.println("TO BE MANAGED - readRequestBody error occurred: " + e.getMessage());
+        }
+
+        return stringBuilder.toString();
     }
 }

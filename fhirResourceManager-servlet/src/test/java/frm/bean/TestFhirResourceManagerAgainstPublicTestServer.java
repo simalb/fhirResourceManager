@@ -24,9 +24,6 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-//import javax.inject.Inject;
-
-
 /**
  * The type Json handler tester.
  */
@@ -42,9 +39,6 @@ public class TestFhirResourceManagerAgainstPublicTestServer {
 
     public static HttpOperationHandlerBean httpOperationHandlerBean;
 
-    /*@Inject
-    private HttpOperationHandler httpOperationHandler;*/
-
     @BeforeClass
     public static void setup()  {
         httpOperationHandlerBean = new HttpOperationHandlerBean();
@@ -59,15 +53,17 @@ public class TestFhirResourceManagerAgainstPublicTestServer {
             ResultHandler getResultHandler = httpOperationHandlerBean.get(GET_URI);
             assertEquals(200, getResultHandler.getCode());
 
-            System.out.println("Convert provided Patient from json to java class");
+            System.out.println("\nConvert provided Patient from json to java class");
             Patient patient = JsonManager.getPatientFromJsonObject(getResultHandler.getResultMessage());
             assertEquals("Newman", patient.getName().get(0).getFamily());
+            System.out.println("Patinet Object: " + patient.toString());
 
-            System.out.println("Convert Patient java class in PatientEntity to store in the DB");
+            System.out.println("\nConvert Patient java class in PatientEntity to store in the DB");
             PatientEntity patientEntity = ConverterUtility.getCompletePatientEntity(patient, TEST_URI+TEST_ID);
             assertEquals(GET_URI, patientEntity.getUrl());
+            System.out.println("PatientEntity Object: " + patientEntity);
 
-            System.out.println("Complete PatientEntity as provided by DB and convert into JsonObject format");
+            System.out.println("\nComplete PatientEntity as provided by DB and convert into JsonObject format");
 
             //patientEntity.setInternalId(UUID.randomUUID());
             patientEntity.setInternalId(UUID.fromString("0c1d7d86-f4db-4ca6-a620-17e87dad659b"));
@@ -78,8 +74,8 @@ public class TestFhirResourceManagerAgainstPublicTestServer {
             patientEntity.setCreationDate(myDate);
 
             String jsonObject = JsonManager.getJsonObjectFromPatientEntity(patientEntity);
-
             Assertions.assertEquals(EXPECTED_JSON_STRING, jsonObject);
+            System.out.println("Json Object: " + jsonObject);
 
             System.out.println("\n*** Ending testGetPatientFromTestServerAndConvertMethods\n");
 
@@ -105,7 +101,7 @@ public class TestFhirResourceManagerAgainstPublicTestServer {
 
             Patient createdPatient = JsonManager.getPatientFromJsonObject(postResultHandler.getResultMessage());
             String newPatientId = createdPatient.getId();
-            System.out.println("Verify Patient creation getting the new Patient from the public test server - id: " + newPatientId);
+            System.out.println("\nVerify Patient creation getting the new Patient from the public test server - id: " + newPatientId);
             ResultHandler checkResultHandler = httpOperationHandlerBean.get(TEST_URI + "/" + newPatientId);
             assertEquals(200, checkResultHandler.getCode());
 
