@@ -19,15 +19,16 @@ import javax.inject.Inject;
 @Stateless
 public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandler {
 
-    @Inject
+    /*@Inject
     HttpOperationHandlerBean httpOperationHandlerBean;
 
     @Inject
-    PatientPersistenceManagerBean patientPersistenceManagerBean;
+    PatientPersistenceManagerBean patientPersistenceManagerBean;*/
 
     @PostConstruct
     public void init() {
         System.out.println("*** Starting fhirResourceManager execution.");
+
     }
 
     @PreDestroy
@@ -37,6 +38,9 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
 
     @Override
     public boolean transferFhirPatient(String fhirUrl) {
+
+        HttpOperationHandlerBean httpOperationHandlerBean = new HttpOperationHandlerBean();
+        PatientPersistenceManagerBean patientPersistenceManagerBean = new PatientPersistenceManagerBean();
 
         try {
             ResultHandler resultHandler = httpOperationHandlerBean.get(fhirUrl);
@@ -55,12 +59,18 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
 
     @Override
     public String transferedPatient(String fhirUrl) {
+        PatientPersistenceManagerBean patientPersistenceManagerBean = new PatientPersistenceManagerBean();
+
         return JsonManager.getJsonObjectFromPatientEntity(patientPersistenceManagerBean.getPatientFromDbTableByUrl(fhirUrl));
     }
 
     @Override
     public String createPatientOnPublicFhirServer(String fhirPatientJson) {
+
+        HttpOperationHandlerBean httpOperationHandlerBean = new HttpOperationHandlerBean();
+
         try {
+            System.out.println("createPatientOnPublicFhirServer");
             return httpOperationHandlerBean.post(PUBLIC_TEST_SERVER_URI, fhirPatientJson).getResultMessage();
         } catch (HttpURLConnectionFailException e) {
             System.out.println("TO BE MANAGED - Error occurred: " + e.getMessage());

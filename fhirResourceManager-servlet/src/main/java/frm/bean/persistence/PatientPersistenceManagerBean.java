@@ -9,7 +9,6 @@ import javax.ejb.Startup;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Arrays;
-import java.util.List;
 
 @Startup
 @Singleton
@@ -72,8 +71,7 @@ public class PatientPersistenceManagerBean {
     private static void runNativeQuery(String s) {
         System.out.println("--------\n" + s);
         Query query = em.createNativeQuery(s);
-        List list = query.getResultList();
-        for (Object o : list) {
+        for (Object o : query.getResultList()) {
             System.out.println(Arrays.toString((Object[]) o));
         }
     }

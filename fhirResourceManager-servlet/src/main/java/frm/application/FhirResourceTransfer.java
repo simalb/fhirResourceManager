@@ -4,6 +4,8 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServlet;
 
 import frm.bean.TransferFhirPatientHandlerBean;
+import frm.bean.http.connection.HttpOperationHandlerBean;
+import frm.bean.persistence.PatientPersistenceManagerBean;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,25 +16,34 @@ import javax.servlet.http.HttpServletResponse;
 
 public class FhirResourceTransfer extends HttpServlet {
 
-    @Inject
-    TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;
+    /*@Inject
+    TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;*/
 
+    @Override
     public void doGet(HttpServletRequest request,
-                      HttpServletResponse response)
-            throws IOException {
-
+                      HttpServletResponse response) {
+        try {
             response.setContentType("text/html");
             PrintWriter writer = response.getWriter();
             writer.println("Welcome to Fhir Resource Transfer Servlet");
-
+        } catch (IOException e) {
+            System.out.println("TO BE MANAGED - IOException occurred: " + e.getMessage());
+        }
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) {
+
+        TransferFhirPatientHandlerBean transferFhirPatientHandlerBean = new TransferFhirPatientHandlerBean();
 
         response.setContentType("application/json");
-        String responseJson= transferFhirPatientHandlerBean.createPatientOnPublicFhirServer(readRequestBody(request));
-        response.getWriter().write(responseJson);
-
+        final String requestBody = readRequestBody(request);
+        String responseJson= transferFhirPatientHandlerBean.createPatientOnPublicFhirServer(requestBody);
+        try {
+            response.getWriter().write(responseJson);
+        } catch (IOException e) {
+            System.out.println("TO BE MANAGED - IOException occurred: " + e.getMessage());
+        }
     }
 
     protected String readRequestBody(final HttpServletRequest request) {
@@ -42,7 +53,7 @@ public class FhirResourceTransfer extends HttpServlet {
         try (final Stream<String> stream = request.getReader().lines()) {
             stream.forEach(line -> stringBuilder.append(line.trim()));
         } catch (IOException e) {
-            System.out.println("TO BE MANAGED - readRequestBody error occurred: " + e.getMessage());
+            System.out.println("TO BE MANAGED - readRequestBody IOException occurred: " + e.getMessage());
         }
 
         return stringBuilder.toString();

@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class ConverterUtility {
 
-    private final SimpleDateFormat DATE_TIME_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public static PatientEntity getCompletePatientEntity(Patient patient, String url) {
         PatientEntity patientEntity = convertPatientToPatientEntity(patient);
@@ -55,7 +55,7 @@ public class ConverterUtility {
 
     private Date parseTimestamp(String timestamp) {
         try {
-            return DATE_TIME_FORMAT.parse(timestamp);
+            return simpleDateFormat.parse(timestamp);
         } catch (ParseException e) {
             throw new IllegalArgumentException(e);
         }

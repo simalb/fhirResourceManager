@@ -23,20 +23,12 @@ public class ResultHandler {
     //HTTP_CREATED = 201
     //HTTP_OK = 200
     public boolean isResultOk() {
-        if((code == 200) || (code == 201)) {
-            return true;
-        }
-
-        return false;
+        return (code == 200) || (code == 201);
     }
 
     //HTTP_NOT_FOUND = 404
     public boolean isResultNotFound() {
-        if(code == 404) {
-            return true;
-        }
-
-        return false;
+        return code == 404;
     }
 
     public String toString(){

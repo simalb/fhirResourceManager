@@ -7,13 +7,14 @@ import frm.bean.utils.json.objects.Patient;
 
 public class JsonManager {
 
+    private JsonManager() {
+    }
+
     public static Patient getPatientFromJsonObject(String json) {
-        Patient patient = new Gson().fromJson(json, Patient.class);
-        return patient;
+        return new Gson().fromJson(json, Patient.class);
     }
 
     public static String getJsonObjectFromPatientEntity(PatientEntity patientEntity) {
-        String jsonObject = new Gson().toJson(ConverterUtility.convertPatientEntityToPatientJsonObject(patientEntity));
-        return jsonObject;
+        return new Gson().toJson(ConverterUtility.convertPatientEntityToPatientJsonObject(patientEntity));
     }
 }

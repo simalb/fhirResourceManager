@@ -98,7 +98,6 @@ public class TestFhirResourceManagerAgainstPublicTestServer {
             ResultHandler postResultHandler = httpOperationHandlerBean.post(TEST_URI, data);
             assertEquals(201, postResultHandler.getCode());
 
-
             Patient createdPatient = JsonManager.getPatientFromJsonObject(postResultHandler.getResultMessage());
             String newPatientId = createdPatient.getId();
             System.out.println("\nVerify Patient creation getting the new Patient from the public test server - id: " + newPatientId);
