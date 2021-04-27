@@ -17,7 +17,7 @@
 
     <servlet-mapping>
         <servlet-name>fhirResourceManager-servlet</servlet-name>
-        <url-pattern>/fhir-resource</url-pattern>
+        <url-pattern>/fhir-resource/*</url-pattern>
     </servlet-mapping>
 
 </web-app>

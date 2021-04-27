@@ -32,13 +32,16 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
     public boolean transferFhirPatient(String fhirUrl) {
 
         HttpOperationHandler httpOperationHandler = new HttpOperationHandler();
-        PatientPersistenceManager patientPersistenceManager = new PatientPersistenceManager();
 
         try {
             ResultHandler resultHandler = httpOperationHandler.get(fhirUrl);
             Patient patient = JsonManager.getPatientFromJsonObject(resultHandler.getResultMessage());
 
+            System.out.println("getCompletePatientEntity - patient: " + patient.toString());
             PatientEntity patientEntity = ConverterUtility.getCompletePatientEntity(patient, fhirUrl);
+
+            System.out.println("\n *** STILL NOT WORKING - persist patient on DB *** \n");
+            PatientPersistenceManager patientPersistenceManager = new PatientPersistenceManager();
             patientPersistenceManager.createPatient(patientEntity);
 
             return true;
@@ -51,9 +54,12 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
 
     @Override
     public String transferedPatient(String fhirUrl) {
-        PatientPersistenceManager patientPersistenceManager = new PatientPersistenceManager();
 
-        return JsonManager.getJsonObjectFromPatientEntity(patientPersistenceManager.getPatientFromDbTableByUrl(fhirUrl));
+        PatientPersistenceManager patientPersistenceManager = new PatientPersistenceManager();
+        String jsonObjectPatient = JsonManager.getJsonObjectFromPatientEntity(patientPersistenceManager.getPatientFromDbTableByUrl(fhirUrl));
+        System.out.println("transferedPatient: " + jsonObjectPatient);
+
+        return jsonObjectPatient;
     }
 
     @Override
@@ -61,8 +67,10 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
         HttpOperationHandler httpOperationHandler = new HttpOperationHandler();
 
         try {
-            System.out.println("createPatientOnPublicFhirServer");
-            return httpOperationHandler.post(PUBLIC_TEST_SERVER_URI, fhirPatientJson).getResultMessage();
+            String resultMessage = httpOperationHandler.post(PUBLIC_TEST_SERVER_URI, fhirPatientJson).getResultMessage();
+            System.out.println("createPatientOnPublicFhirServer: " + resultMessage);
+            return resultMessage;
+
         } catch (HttpURLConnectionFailException e) {
             System.out.println("TO BE MANAGED - Error occurred: " + e.getMessage());
             return "{}";

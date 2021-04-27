@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class FhirResourceTransfer extends HttpServlet {
 
+    public static final String TEST_URI = "http://hapi.fhir.org/baseR4/Patient";
+
     @Inject
     TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;
 
@@ -26,6 +28,13 @@ public class FhirResourceTransfer extends HttpServlet {
             response.setContentType("text/html");
             PrintWriter writer = response.getWriter();
             writer.println("Welcome to Fhir Resource Transfer Servlet");
+
+            String patientId = request.getPathInfo();
+            if(patientId != null) {
+                System.out.println("FhirResourceTransfer - patient id to find in the fhir test server: " + patientId);
+                transferFhirPatientHandlerBean.transferFhirPatient(TEST_URI + patientId);
+            }
+
         } catch (IOException e) {
             System.out.println("TO BE MANAGED - IOException occurred: " + e.getMessage());
         }
