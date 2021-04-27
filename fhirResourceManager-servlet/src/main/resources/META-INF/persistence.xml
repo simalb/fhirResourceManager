@@ -5,20 +5,20 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="PatientTransferService" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <!--class>frm.bean.persistence.entity.PatientEntity</class-->
+        <class>frm.bean.persistence.entity.PatientEntity</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
 
-            <!--operty name="javax.persistence.jdbc.url"
-                       value="jdbc:derby:/home/simona/databases/simpleDb;create=true" />
+            <property name="javax.persistence.jdbc.url"
+                       value="jdbc:derby:/etc/postgresDB" />
             <property name="javax.persistence.jdbc.user" value="postgres" />
-            <property name="javax.persistence.jdbc.password" value="postgres" /-->
+            <property name="javax.persistence.jdbc.password" value="postgres" />
 
             <!-- EclipseLink should create the database schema automatically -->
-            <!--property name="eclipselink.ddl-generation" value="create-tables" />
-            <property name="eclipselink.ddl-generation.output-mode" value="database" /-->
+            <property name="eclipselink.ddl-generation" value="create-tables" />
+            <property name="eclipselink.ddl-generation.output-mode" value="postgres" />
         </properties>
     </persistence-unit>
 </persistence>
