@@ -7,9 +7,9 @@ public interface TransferFhirPatientHandler {
     //JAVA TEST - 1 READ AND TRANSFER A FHIR RESOURCE
     boolean transferFhirPatient(String fhirUrl);
 
-    //2 GET THE COPY
-    String transferedPatient(String fhirUrl);
+    //JAVA TEST - 2 GET THE COPY
+    String transferredPatient(String fhirUrl);
 
-    //4 FHIR TEST SERVER
+    //JAVA TEST - 4 FHIR TEST SERVER
     String createPatientOnPublicFhirServer(String fhirPatientJson);
 }

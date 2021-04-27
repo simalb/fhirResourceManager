@@ -32,7 +32,12 @@ public class FhirResourceTransfer extends HttpServlet {
             String patientId = request.getPathInfo();
             if(patientId != null) {
                 System.out.println("FhirResourceTransfer - patient id to find in the fhir test server: " + patientId);
-                transferFhirPatientHandlerBean.transferFhirPatient(TEST_URI + patientId);
+                boolean success = transferFhirPatientHandlerBean.transferFhirPatient(TEST_URI + patientId);
+
+                if(!success) {
+                    response.sendError(404, "Operation failure!");
+                }
+
             }
 
         } catch (IOException e) {

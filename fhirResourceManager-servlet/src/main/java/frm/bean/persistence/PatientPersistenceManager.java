@@ -5,6 +5,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Arrays;
 
+
+//TODO - understand wy it does not work
 public class PatientPersistenceManager {
 
     public void createPatient(PatientEntity patient)  {

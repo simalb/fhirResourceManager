@@ -29,17 +29,21 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
     }
 
     @Override
+    //JAVA TEST - 1 READ AND TRANSFER A FHIR RESOURCE
     public boolean transferFhirPatient(String fhirUrl) {
 
         HttpOperationHandler httpOperationHandler = new HttpOperationHandler();
 
         try {
+            //Read out patient from fhir server
             ResultHandler resultHandler = httpOperationHandler.get(fhirUrl);
             Patient patient = JsonManager.getPatientFromJsonObject(resultHandler.getResultMessage());
 
             System.out.println("getCompletePatientEntity - patient: " + patient.toString());
             PatientEntity patientEntity = ConverterUtility.getCompletePatientEntity(patient, fhirUrl);
 
+            //Create a copy in sql table
+            // TODO- STILL NOT WORKING
             System.out.println("\n *** STILL NOT WORKING - persist patient on DB *** \n");
             PatientPersistenceManager patientPersistenceManager = new PatientPersistenceManager();
             patientPersistenceManager.createPatient(patientEntity);
@@ -53,9 +57,14 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
     }
 
     @Override
-    public String transferedPatient(String fhirUrl) {
+    //JAVA TEST - 2 GET THE COPY
+    public String transferredPatient(String fhirUrl) {
 
+        //Get copied patient from sql table - NOT WORKING
+        // TODO- STILL NOT WORKING
         PatientPersistenceManager patientPersistenceManager = new PatientPersistenceManager();
+
+        //Convert to Json Object
         String jsonObjectPatient = JsonManager.getJsonObjectFromPatientEntity(patientPersistenceManager.getPatientFromDbTableByUrl(fhirUrl));
         System.out.println("transferedPatient: " + jsonObjectPatient);
 
@@ -63,10 +72,12 @@ public class TransferFhirPatientHandlerBean implements TransferFhirPatientHandle
     }
 
     @Override
+    //JAVA TEST - 4 FHIR TEST SERVER
     public String createPatientOnPublicFhirServer(String fhirPatientJson) {
         HttpOperationHandler httpOperationHandler = new HttpOperationHandler();
 
         try {
+            //Create patient to public fhir test server
             String resultMessage = httpOperationHandler.post(PUBLIC_TEST_SERVER_URI, fhirPatientJson).getResultMessage();
             System.out.println("createPatientOnPublicFhirServer: " + resultMessage);
             return resultMessage;
