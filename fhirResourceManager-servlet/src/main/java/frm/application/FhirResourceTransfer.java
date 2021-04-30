@@ -1,74 +1,41 @@
 package frm.application;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServlet;
-
 import frm.bean.TransferFhirPatientHandlerBean;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.stream.Stream;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-public class FhirResourceTransfer extends HttpServlet {
+@Path("")
+public class FhirResourceTransfer {
 
     public static final String TEST_URI = "http://hapi.fhir.org/baseR4/Patient";
 
     @Inject
     TransferFhirPatientHandlerBean transferFhirPatientHandlerBean;
 
-    @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) {
-
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    public String doGet() {
         System.out.println("FhirResourceTransfer - doGet");
-
-        try {
-            response.setContentType("text/html");
-            PrintWriter writer = response.getWriter();
-            writer.println("Welcome to Fhir Resource Transfer Servlet");
-
-            String patientId = request.getPathInfo();
-            if(patientId != null) {
-                System.out.println("FhirResourceTransfer - patient id to find in the fhir test server: " + patientId);
-                boolean success = transferFhirPatientHandlerBean.transferFhirPatient(TEST_URI + patientId);
-
-                if(!success) {
-                    response.sendError(404, "Operation failure!");
-                }
-
-            }
-
-        } catch (IOException e) {
-            System.out.println("TO BE MANAGED - IOException occurred: " + e.getMessage());
-        }
+        return "Welcome to Fhir Resource Transfer Servlet";
     }
 
-    @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) {
+    @GET
+    @Path(value="{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getFhirResource(@PathParam("id") String id) {
+        System.out.println("FhirResourceTransfer - patient id to find in the fhir test server: " + id);
+        if(transferFhirPatientHandlerBean.transferFhirPatient(TEST_URI + id)) {
+            return "Patient: " + id +" transferred on local DB";
+        }
+        return "Patient: " + id + " transfer failed";
+    }
+
+    @POST
+    @Consumes(value="application/json")
+    public String doPost(String requestBody) {
         System.out.println("FhirResourceTransfer - doPost");
 
-        response.setContentType("application/json");
-        final String requestBody = readRequestBody(request);
-        String responseJson= transferFhirPatientHandlerBean.createPatientOnPublicFhirServer(requestBody);
-        try {
-            response.getWriter().write(responseJson);
-        } catch (IOException e) {
-            System.out.println("TO BE MANAGED - IOException occurred: " + e.getMessage());
-        }
-    }
-
-    protected String readRequestBody(final HttpServletRequest request) {
-
-        final StringBuilder stringBuilder = new StringBuilder();
-
-        try (final Stream<String> stream = request.getReader().lines()) {
-            stream.forEach(line -> stringBuilder.append(line.trim()));
-        } catch (IOException e) {
-            System.out.println("TO BE MANAGED - readRequestBody IOException occurred: " + e.getMessage());
-        }
-
-        return stringBuilder.toString();
+        return transferFhirPatientHandlerBean.createPatientOnPublicFhirServer(requestBody);
     }
 }

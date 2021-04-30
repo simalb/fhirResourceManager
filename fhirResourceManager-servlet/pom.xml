@@ -6,31 +6,28 @@
    <packaging>war</packaging>
    <name>fhirResourceManager-servlet</name>
 
+    <parent>
+        <groupId>root</groupId>
+        <artifactId>fhirResourceManager-project</artifactId>
+        <version>1.0</version>
+    </parent>
+
     <properties>
        <jackson.version>2.12.0</jackson.version>
+
+        <jersey.version>2.23.2</jersey.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!--build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build-->
     <build>
         <finalName>fhirResourceManager-servlet</finalName>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+        <!--pluginManagement>
             <plugins>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.1.0</version>
                 </plugin>
-                <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>3.0.2</version>
@@ -56,8 +53,8 @@
                     <version>2.8.2</version>
                 </plugin>
             </plugins>
-        </pluginManagement>
-        <plugins>
+        </pluginManagement-->
+        <!--plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -66,18 +63,83 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+        </plugins-->
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <inherited>true</inherited>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
-    <parent>
-      <groupId>root</groupId>
-      <artifactId>fhirResourceManager-project</artifactId>
-      <version>1.0</version>
-   </parent>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.glassfish.jersey</groupId>
+                <artifactId>jersey-bom</artifactId>
+                <version>${jersey.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
    <dependencies>
+
+       <dependency>
+           <groupId>org.glassfish.jersey.containers</groupId>
+           <artifactId>jersey-container-servlet-core</artifactId>
+           <!-- use the following artifactId if you don't need servlet 2.x compatibility -->
+           <!-- artifactId>jersey-container-servlet</artifactId -->
+       </dependency>
 
        <!-- Library -->
        <dependency>
+           <groupId>com.fasterxml.jackson.core</groupId>
+           <artifactId>jackson-annotations</artifactId>
+           <version>${jackson.version}</version>
+       </dependency>
+       <dependency>
+           <groupId>org.projectlombok</groupId>
+           <artifactId>lombok</artifactId>
+           <version>RELEASE</version>
+           <scope>compile</scope>
+       </dependency>
+       <dependency>
+           <groupId>com.google.code.gson</groupId>
+           <artifactId>gson</artifactId>
+           <version>2.8.0</version>
+       </dependency>
+
+       <!--junit -->
+       <dependency>
+           <groupId>junit</groupId>
+           <artifactId>junit</artifactId>
+           <version>4.12</version>
+           <scope>test</scope>
+       </dependency>
+       <dependency>
+           <groupId>org.mockito</groupId>
+           <artifactId>mockito-all</artifactId>
+           <version>1.10.8</version>
+           <scope>test</scope>
+       </dependency>
+       <dependency>
+           <groupId>org.junit.jupiter</groupId>
+           <artifactId>junit-jupiter-api</artifactId>
+           <version>5.8.0-M1</version>
+           <scope>test</scope>
+       </dependency>
+
+       <!--dependency>
            <groupId>javax</groupId>
            <artifactId>javaee-api</artifactId>
            <version>6.0</version>
@@ -98,41 +160,7 @@
            <groupId>javax.servlet</groupId>
            <artifactId>javax.servlet-api</artifactId>
            <version>4.0.1</version>
-       </dependency>
-       <dependency>
-           <groupId>junit</groupId>
-           <artifactId>junit</artifactId>
-           <version>4.12</version>
-           <scope>test</scope>
-       </dependency>
-       <dependency>
-           <groupId>org.mockito</groupId>
-           <artifactId>mockito-all</artifactId>
-           <version>1.10.8</version>
-           <scope>test</scope>
-       </dependency>
-       <dependency>
-           <groupId>org.junit.jupiter</groupId>
-           <artifactId>junit-jupiter-api</artifactId>
-           <version>5.8.0-M1</version>
-           <scope>test</scope>
-       </dependency>
-       <dependency>
-           <groupId>org.projectlombok</groupId>
-           <artifactId>lombok</artifactId>
-           <version>RELEASE</version>
-           <scope>compile</scope>
-       </dependency>
-       <dependency>
-           <groupId>com.google.code.gson</groupId>
-           <artifactId>gson</artifactId>
-           <version>2.8.0</version>
-       </dependency>
-       <dependency>
-           <groupId>com.fasterxml.jackson.core</groupId>
-           <artifactId>jackson-annotations</artifactId>
-           <version>${jackson.version}</version>
-       </dependency>
+       </dependency-->
 
        <dependency>
            <groupId>javax</groupId>
@@ -162,17 +190,17 @@
            <scope>provided</scope>
        </dependency>
 
-       <dependency>
+       <!--dependency>
            <groupId>org.jboss.weld.servlet</groupId>
            <artifactId>weld-servlet-shaded</artifactId>
            <version>3.1.5.Final</version>
-       </dependency>
+       </dependency-->
    </dependencies>
 
-    <repositories>
+    <!--repositories>
         <repository>
             <id>eclipselink</id>
             <url>http://www.eclipse.org/downloads/download.php?r=1&amp;nf=1&amp;file=/rt/eclipselink/maven.repo/</url>
         </repository>
-    </repositories>
+    </repositories-->
 </project>
